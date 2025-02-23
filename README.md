@@ -59,7 +59,7 @@ The following are the main components of the project:
 - `play.py` – Simulates and evaluates a full game.
 - `poker.py` – Poker deck and hand evaluation functions.
 - `scoring_fast.py` – Optimized scoring and arrangement comparison.
-- `Dict/` – Contains precomputed evaluation dictionaries (pkl files), which are too large for GitHub. Users can either generate their own pkl files and place them in the `Dict/` folder or download them from [Google Drive](https://drive.google.com/drive/folders/16xG5Q71OJtGZQXdtI4nxHSs1wa2llQZe?usp=drive_link).
+- `Dict/` – Contains precomputed evaluation dictionaries (pkl files and other files), which are too large for GitHub. Users can either generate their own pkl files and place them in the `Dict/` folder or download them from [Google Drive](https://drive.google.com/drive/folders/16xG5Q71OJtGZQXdtI4nxHSs1wa2llQZe?usp=drive_link).
 
 The following are the main components of the project:
 
