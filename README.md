@@ -59,7 +59,7 @@ The following are the main components of the project:
 - `play.py` – Simulates and evaluates a full game.
 - `poker.py` – Poker deck and hand evaluation functions.
 - `scoring_fast.py` – Optimized scoring and arrangement comparison.
-- `Dict/` – Contains precomputed evaluation dictionaries (pkl files and other files), which are too large for GitHub. Users can either generate their own pkl files and place them in the `Dict/` folder or download them from [Google Drive](https://drive.google.com/drive/folders/16xG5Q71OJtGZQXdtI4nxHSs1wa2llQZe?usp=drive_link).
+- `Dict/` – Contains precomputed evaluation dictionaries (pkl files), which are too large for GitHub. Users can either generate their own pkl files and place them in the `Dict/` folder or download them from [Google Drive](https://drive.google.com/drive/folders/16xG5Q71OJtGZQXdtI4nxHSs1wa2llQZe?usp=drive_link).
 
 The following are the main components of the project:
 
@@ -162,14 +162,7 @@ Scoring follows standard Chinese Poker rules:
 - **Overall Bonus** (+18 points) for the best total hand.
 - **Scoop Bonus** (+6 points) if a player wins all hands against all opponents.
 - **Tied Hands** result in no points being awarded for that position.
-- **Scoop Bonus** (+6 points) if a player wins all hands against all opponents.
-- **Tied Hands** result in no points being awarded for that position.
 
-- Players compare **Front, Middle, and Back** hands.
-- Points are awarded based on who has the stronger hand.
-- Special bonuses apply for strong hands (e.g., three of a kind in Front, four of a kind in Middle/Back).
-- **Sweep Bonus** (+3 points) if a player wins all three hands.
-- **Overall Bonus** (+18 points) for the best total hand.
 
 ## AI and Game Strategy
 
@@ -190,4 +183,6 @@ The project leverages:
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+
 
