@@ -1,4 +1,4 @@
-# Chinese Poker(13張 for 開心鬥一番)
+# Chinese Poker
 
 ## Overview
 
@@ -27,16 +27,6 @@ The goal is to create the strongest possible hand while following the ordering r
 - [TODO List](#todo-list)
 - [License](#license)
 
-Chinese Poker is a four-player card game where each player is dealt 13 cards and must arrange them into three hands:
-
-- **Front** (3 cards)
-- **Middle** (5 cards)
-- **Back** (5 cards)
-
-The goal is to create the strongest possible hand while following the ordering rule: `Front < Middle <= Back`. The game is based on the same rules as **開心鬥一番** and includes scoring mechanisms, expected value calculations, Nash equilibrium computations, and data collection to improve AI decision-making.
-
-
-
 ## Features
 
 - **Hand Arrangement**: Automatically finds valid arrangements for a given 13-card hand.
@@ -61,33 +51,6 @@ The following are the main components of the project:
 - `scoring_fast.py` – Optimized scoring and arrangement comparison.
 - `Dict/` – Contains precomputed evaluation dictionaries (pkl files), which are too large for GitHub. Users can either generate their own pkl files and place them in the `Dict/` folder or download them from [Google Drive](https://drive.google.com/drive/folders/16xG5Q71OJtGZQXdtI4nxHSs1wa2llQZe?usp=drive_link).
 
-The following are the main components of the project:
-
-- `analyze_scores.py` – Analyzes game results and score distributions.
-- `arrange.py` – Computes valid hand arrangements.
-- `arrange_with_stats.py` – Extended hand arrangement with statistical analysis.
-- `collect_data.py` – Simulates games to collect training data.
-- `expected_value.py` – Computes expected value for hands.
-- `game_equilibrium.py` – Implements Nash equilibrium strategies.
-- `play.py` – Simulates and evaluates a full game.
-- `poker.py` – Poker deck and hand evaluation functions.
-- `scoring_fast.py` – Optimized scoring and arrangement comparison.
-- `Dict/` – Precomputed evaluation dictionaries (pkl files).
-
-```
-Chinese Poker/
-├── analyze_scores.py        # Analyzes hand scores and win rates
-├── arrange.py               # Finds all valid hand arrangements
-├── arrange_with_stats.py    # Extended arrangement with statistical analysis
-├── collect_data.py          # Simulates games to collect training data
-├── expected_value.py        # Computes expected value for hands
-├── game_equilibrium.py      # Computes Nash equilibrium strategies
-├── play.py                  # Simulates a full game with scoring
-├── poker.py                 # Poker deck and hand evaluation functions
-├── scoring_fast.py          # Optimized scoring and arrangement comparison
-└── Dict/                    # Precomputed evaluation dictionaries (pkl files)
-```
-
 ## Installation
 
 ### Prerequisites
@@ -102,13 +65,11 @@ Chinese Poker/
 
 ### Find Hand Arrangements
 
-To find valid hand arrangements for a specific hand:
-
 ```bash
 python arrange.py --hand "2C 3C AS 10D 9H 8S 7D 6C 5H 4S 3D 2H KH"
 ```
 
-To generate a random hand and save valid arrangements to CSV:
+Generate a random hand and save valid arrangements to CSV:
 
 ```bash
 python arrange.py --random --csv output.csv
@@ -116,15 +77,11 @@ python arrange.py --random --csv output.csv
 
 ### Play a Full Game
 
-Run a simulation of a 4-player game with optimal arrangements:
-
 ```bash
 python play.py
 ```
 
 ### Compute Expected Values
-
-To evaluate hands based on statistical data:
 
 ```bash
 python expected_value.py
@@ -132,15 +89,11 @@ python expected_value.py
 
 ### Simulate Games for Data Collection
 
-To generate a dataset of simulated games:
-
 ```bash
 python collect_data.py --games 100 --csv results.csv
 ```
 
 ### Analyze Score Distributions
-
-To analyze hand scores and win rates:
 
 ```bash
 python analyze_scores.py --results results.csv
@@ -163,7 +116,6 @@ Scoring follows standard Chinese Poker rules:
 - **Scoop Bonus** (+6 points) if a player wins all hands against all opponents.
 - **Tied Hands** result in no points being awarded for that position.
 
-
 ## AI and Game Strategy
 
 The project leverages:
@@ -183,6 +135,4 @@ The project leverages:
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
-
-
 
