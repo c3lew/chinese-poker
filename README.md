@@ -122,6 +122,8 @@ Additionally, the game involves **multiple strategic layers**, including:
 
 ### How AI Helps Solve These Challenges
 
+One key advantage of this approach is the ability to **calculate the expected value** of an initial hand efficiently. By generating all roughly **15,000 to 20,000** possible valid hand arrangements, scoring them, and selecting the optimal configuration, the system can determine the best possible hand **in less than a second**. This rapid computation allows for strategic decision-making in real-time scenarios.
+
 This project leverages AI techniques to tackle these challenges:
 
 - **Precomputed Evaluations**: Utilizes hand strength lookup tables for quick assessments.
@@ -141,4 +143,5 @@ By combining these techniques, the AI makes **data-driven strategic decisions**,
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
 
