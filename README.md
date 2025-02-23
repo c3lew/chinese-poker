@@ -84,7 +84,7 @@ python play.py
 
 ### Compute Expected Values
 ```bash
-python expected_value.py
+python expected_value.py --front 4.1 0.8 --middle 7.2 0.7 --back 10.3 0.9
 ```
 
 ### Simulate Games for Data Collection
