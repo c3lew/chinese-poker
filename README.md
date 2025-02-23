@@ -112,7 +112,6 @@ Scoring follows standard Chinese Poker rules:
   - **Full House in Middle**: +2 points
   - **Four of a Kind in Middle/Back**: +4 points
   - **Straight Flush in Middle/Back**: +5 points
-  - **Royal Flush in Back**: +10 points
 - **Sweep Bonus** (+3 points) if a player wins all three hands.
 - **Overall Bonus** (+18 points) for the best total hand.
 - **Scoop Bonus** (+6 points) if a player wins all hands against all opponents.
