@@ -56,7 +56,7 @@ The following are the main components of the project:
 ### Prerequisites
 
 - Python 3.7+
-- Required dependencies (install via pip):
+- Required dependencies:
   ```bash
   pip install numpy pandas
   ```
@@ -64,37 +64,30 @@ The following are the main components of the project:
 ## Usage
 
 ### Find Hand Arrangements
-
 ```bash
 python arrange.py --hand "2C 3C AS 10D 9H 8S 7D 6C 5H 4S 3D 2H KH"
 ```
-
 Generate a random hand and save valid arrangements to CSV:
-
 ```bash
 python arrange.py --random --csv output.csv
 ```
 
 ### Play a Full Game
-
 ```bash
 python play.py
 ```
 
 ### Compute Expected Values
-
 ```bash
 python expected_value.py
 ```
 
 ### Simulate Games for Data Collection
-
 ```bash
 python collect_data.py --games 100 --csv results.csv
 ```
 
 ### Analyze Score Distributions
-
 ```bash
 python analyze_scores.py --results results.csv
 ```
@@ -118,19 +111,32 @@ Scoring follows standard Chinese Poker rules:
 
 ## AI and Game Strategy
 
-The project leverages:
+### Challenges of Chinese Poker
 
-- **Precomputed Evaluations**: Uses hand strength lookup tables.
-- **Monte Carlo Simulations**: Estimates expected values for hands.
-- **Best-Response Dynamics**: Finds Nash equilibrium strategies.
-- **Game-Theoretic Analysis**: Optimizes play based on expected payoffs.
+Chinese Poker is an **imperfect information game**, meaning that players do not have full knowledge of their opponents' hands. This adds complexity to strategic decision-making compared to perfect information games like chess. Players must **estimate probabilities, assess risk**, and make decisions based on incomplete data.
+
+Additionally, the game involves **multiple strategic layers**, including:
+- Arranging hands optimally.
+- Predicting opponent strategies.
+- Adapting based on available information and scoring potential.
+
+### How AI Helps Solve These Challenges
+
+This project leverages AI techniques to tackle these challenges:
+
+- **Precomputed Evaluations**: Utilizes hand strength lookup tables for quick assessments.
+- **Monte Carlo Simulations**: Estimates expected values by simulating possible opponent hands.
+- **Best-Response Dynamics**: Finds Nash equilibrium strategies for optimal play.
+- **Game-Theoretic Analysis**: Uses mathematical modeling to optimize decision-making under uncertainty.
+
+By combining these techniques, the AI makes **data-driven strategic decisions**, outperforming simple heuristics and enabling **competitive play against real players**.
 
 ## TODO List
 
 - Develop **Deep Learning AI** for optimal hand arrangement and implement 1v3 mode (AI vs three calculated stats).
 - Gather real-world player data from **開心鬥一番** to analyze player performance.
 - Integrate **image recognition** to extract gameplay data from **開心鬥一番**, enabling AI to compete against real players.
-- Design and implement a **GUI interface** for enhanced user interaction with the tool.
+- Design and implement a **GUI interface** for enhanced user interaction.
 
 ## License
 
