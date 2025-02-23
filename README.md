@@ -89,12 +89,12 @@ python expected_value.py
 
 ### Simulate Games for Data Collection
 ```bash
-python collect_data.py --games 100 --csv results.csv
+python collect_data.py --games 10 --csv results.csv --max_iter 100
 ```
 
 ### Analyze Score Distributions
 ```bash
-python analyze_scores.py --results results.csv
+python analyze_scores.py 
 ```
 
 ## Scoring System
