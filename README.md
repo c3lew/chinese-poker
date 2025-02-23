@@ -176,5 +176,5 @@ The project leverages:
 
 ## License
 
-This project is open-source and available for educational and research purposes.
+This project is licensed under the MIT License. See the LICENSE file for details.
 
