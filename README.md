@@ -2,13 +2,18 @@
 
 ## Overview
 
-Chinese Poker is a four-player card game where each player is dealt 13 cards and must arrange them into three hands:
+Chinese Poker is a four-player card game where each player is dealt 13 cards from a standard 52-card deck. The players must then arrange their cards into three separate hands:
 
-- **Front** (3 cards)
-- **Middle** (5 cards)
-- **Back** (5 cards)
+- **Front Hand** (3 cards) – This is the weakest hand, often consisting of high-card hands or small pairs.
+- **Middle Hand** (5 cards) – This must be stronger than the front hand but weaker than the back hand.
+- **Back Hand** (5 cards) – The strongest of the three hands, typically containing the best possible five-card combination.
 
-The goal is to create the strongest possible hand while following the ordering rule: `Front < Middle <= Back`. The game is based on the same rules as **開心鬥一番** and includes scoring mechanisms, expected value calculations, Nash equilibrium computations, and data collection to improve AI decision-making.
+### Game Rules
+After arranging their hands, players compare each of their three hands against the corresponding hands of the other players. The scoring system is based on who has the stronger hands, with additional bonuses awarded for special hands (e.g., straights, flushes, full houses). A player must ensure their hands follow the order rule: `Front < Middle <= Back`, or else their entire hand is considered fouled, resulting in an automatic loss.
+
+The game is played in rounds, and each player accumulates points based on the strength of their hands relative to the other players. The player with the most points at the end of multiple rounds wins.
+
+Chinese Poker is based on the same rules as **開心鬥一番** and incorporates advanced techniques such as scoring mechanisms, expected value calculations, Nash equilibrium computations, and AI-driven data collection to optimize gameplay and decision-making.
 
 ## Table of Contents
 
@@ -125,16 +130,7 @@ Additionally, the game involves **multiple strategic layers**, including:
 
 ### How AI Helps Solve These Challenges
 
-One key advantage of this approach is the ability to **calculate the expected value** of an initial hand efficiently. By generating all **15,000 to 22,000** possible valid hand arrangements, scoring them, and selecting the optimal configuration, the system can determine the best possible hand **in less than a second**. This rapid computation allows for strategic decision-making in real-time scenarios.
-
-This project leverages AI techniques to tackle these challenges:
-
-- **Precomputed Evaluations**: Utilizes hand strength lookup tables for quick assessments.
-- **Monte Carlo Simulations**: Estimates expected values by simulating possible opponent hands.
-- **Best-Response Dynamics**: Finds Nash equilibrium strategies for optimal play.
-- **Game-Theoretic Analysis**: Uses mathematical modeling to optimize decision-making under uncertainty.
-
-By combining these techniques, the AI makes **data-driven strategic decisions**, outperforming simple heuristics and enabling **competitive play against real players**.
+One key advantage of this approach is the ability to **calculate the expected value** of an initial hand efficiently. By generating all **15,000 to 20,000** possible valid hand arrangements, scoring them, and selecting the optimal configuration, the system can determine the best possible hand **in less than a second**. This rapid computation allows for strategic decision-making in real-time scenarios.
 
 ## TODO List
 
