@@ -1,4 +1,4 @@
-# Chinese Poker
+# Chinese Poker(13張 for 開心鬥一番)
 
 ## Overview
 
