@@ -59,6 +59,19 @@ The following are the main components of the project:
 - `play.py` – Simulates and evaluates a full game.
 - `poker.py` – Poker deck and hand evaluation functions.
 - `scoring_fast.py` – Optimized scoring and arrangement comparison.
+- `Dict/` – Contains precomputed evaluation dictionaries (pkl files), which are too large for GitHub. Users can either generate their own pkl files and place them in the `Dict/` folder or download them from [Google Drive](https://drive.google.com/drive/folders/16xG5Q71OJtGZQXdtI4nxHSs1wa2llQZe?usp=drive_link).
+
+The following are the main components of the project:
+
+- `analyze_scores.py` – Analyzes game results and score distributions.
+- `arrange.py` – Computes valid hand arrangements.
+- `arrange_with_stats.py` – Extended hand arrangement with statistical analysis.
+- `collect_data.py` – Simulates games to collect training data.
+- `expected_value.py` – Computes expected value for hands.
+- `game_equilibrium.py` – Implements Nash equilibrium strategies.
+- `play.py` – Simulates and evaluates a full game.
+- `poker.py` – Poker deck and hand evaluation functions.
+- `scoring_fast.py` – Optimized scoring and arrangement comparison.
 - `Dict/` – Precomputed evaluation dictionaries (pkl files).
 
 ```
@@ -176,5 +189,5 @@ The project leverages:
 
 ## License
 
-This project is licensed under the MIT License. See the LICENSE file for details.
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
