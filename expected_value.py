@@ -9,8 +9,13 @@ Calculates expected values for Chinese Poker hands based on:
 
 Uses statistical information from position info files to estimate probabilities
 and calculate expected values.
+
+Usage:
+    python expected_value.py --front 4.1 0.8 --middle 7.2 0.7 --back 10.3 0.9
+    python expected_value.py  # Uses default example arrangement
 """
 
+import argparse
 import pickle
 from typing import Dict, Any
 import pandas as pd
@@ -233,18 +238,57 @@ class ExpectedValueCalculator:
 
 
 def main() -> None:
-    """Demonstrate the usage of ExpectedValueCalculator with an example arrangement."""
+    """Main entry point for calculating expected values from command-line arguments."""
+    parser = argparse.ArgumentParser(
+        description="Calculate expected values for a Chinese Poker hand arrangement."
+    )
+    parser.add_argument(
+        "--front",
+        nargs=2,
+        type=float,
+        metavar=("SCORE", "WIN_RATE"),
+        help="Front hand score and win rate (e.g., 4.1 0.8 for three of a kind with 80% win rate)"
+    )
+    parser.add_argument(
+        "--middle",
+        nargs=2,
+        type=float,
+        metavar=("SCORE", "WIN_RATE"),
+        help="Middle hand score and win rate (e.g., 7.2 0.7 for full house with 70% win rate)"
+    )
+    parser.add_argument(
+        "--back",
+        nargs=2,
+        type=float,
+        metavar=("SCORE", "WIN_RATE"),
+        help="Back hand score and win rate (e.g., 10.3 0.9 for royal flush with 90% win rate)"
+    )
+
+    args = parser.parse_args()
+
     calculator = ExpectedValueCalculator()
 
-    # Example arrangement with bonus hands
-    arrangement = {
-        'front_score': 4.1,  # Three of a kind (category 4)
-        'front_win_rate': 0.8,
-        'middle_score': 7.2,  # Full house (category 7)
-        'middle_win_rate': 0.7,
-        'back_score': 10.3,  # Royal flush (category 10)
-        'back_win_rate': 0.9,
-    }
+    # Default example arrangement if no arguments provided
+    if not any([args.front, args.middle, args.back]):
+        arrangement = {
+            'front_score': 4.1,  # Three of a kind (category 4)
+            'front_win_rate': 0.8,
+            'middle_score': 7.2,  # Full house (category 7)
+            'middle_win_rate': 0.7,
+            'back_score': 10.3,  # Royal flush (category 10)
+            'back_win_rate': 0.9,
+        }
+        print("No arguments provided. Using default example arrangement:")
+    else:
+        # Construct arrangement from provided arguments, using defaults where omitted
+        arrangement = {
+            'front_score': args.front[0] if args.front else 1.0,  # Default to high card
+            'front_win_rate': args.front[1] if args.front else 0.5,
+            'middle_score': args.middle[0] if args.middle else 1.0,
+            'middle_win_rate': args.middle[1] if args.middle else 0.5,
+            'back_score': args.back[0] if args.back else 1.0,
+            'back_win_rate': args.back[1] if args.back else 0.5,
+        }
 
     ev = calculator.calculate_total_ev(arrangement)
 
