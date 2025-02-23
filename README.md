@@ -1,4 +1,4 @@
-# Chinese Poker(13張 for 開心鬥一番)
+# Chinese Poker
 
 ## Overview
 
@@ -97,7 +97,11 @@ python analyze_scores.py --results results.csv
 Scoring follows standard Chinese Poker rules:
 
 - Players compare **Front, Middle, and Back** hands.
-- Points are awarded based on who has the stronger hand in each position.
+- Points are awarded based on who has the stronger hand in each position:
+  - **Winning a hand**: +1 point
+  - **Losing a hand**: -1 point
+  - **Tied hands**: 0 points awarded
+- The total score is calculated by summing the points from all three hands.
 - Special bonuses apply for strong hands:
   - **Three of a Kind in Front**: +3 points
   - **Full House in Middle**: +2 points
@@ -107,7 +111,6 @@ Scoring follows standard Chinese Poker rules:
 - **Sweep Bonus** (+3 points) if a player wins all three hands.
 - **Overall Bonus** (+18 points) for the best total hand.
 - **Scoop Bonus** (+6 points) if a player wins all hands against all opponents.
-- **Tied Hands** result in no points being awarded for that position.
 
 ## AI and Game Strategy
 
@@ -122,7 +125,7 @@ Additionally, the game involves **multiple strategic layers**, including:
 
 ### How AI Helps Solve These Challenges
 
-One key advantage of this approach is the ability to **calculate the expected value** of an initial hand efficiently. By generating all roughly **15,000 to 20,000** possible valid hand arrangements, scoring them, and selecting the optimal configuration, the system can determine the best possible hand **in less than a second**. This rapid computation allows for strategic decision-making in real-time scenarios.
+One key advantage of this approach is the ability to **calculate the expected value** of an initial hand efficiently. By generating all **15,000 to 22,000** possible valid hand arrangements, scoring them, and selecting the optimal configuration, the system can determine the best possible hand **in less than a second**. This rapid computation allows for strategic decision-making in real-time scenarios.
 
 This project leverages AI techniques to tackle these challenges:
 
@@ -143,5 +146,4 @@ By combining these techniques, the AI makes **data-driven strategic decisions**,
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
-
 
